@@ -53,8 +53,6 @@ export default {
         commit('updateState', {
           movies: _uniqBy(Search, 'imdbID')
         })
-        console.log(totalResults) // 266 => 27 페이지
-        console.log(typeof totalResults) //string
 
         const total = parseInt(totalResults, 10)
         const pageLength = Math.ceil(total / 10) // ceil 은 올림처리
@@ -94,7 +92,6 @@ export default {
 
       try {
         const res = await _fetchMovie(payload)
-        console.log(res.data)
         commit('updateState', {
           theMovie: res.data
         })

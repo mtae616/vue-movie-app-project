@@ -64,7 +64,6 @@ export default {
   methods: {
     isMatch(path) {
       if(!path) return false
-      console.log(this.$route)
       return path.test(this.$route.fullPath) 
       // .test 는 정규표현식을 만족했는지 확인하는 메소드
     },
